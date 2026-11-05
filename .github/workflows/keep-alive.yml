@@ -1,0 +1,16 @@
+# Supabase free projects pause after about a week without activity.
+# This reads one row every two days so the demo database stays awake.
+name: Keep Supabase awake
+on:
+  schedule:
+    - cron: '0 20 */2 * *'
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read one row
+        run: |
+          curl --fail -sS "${{ secrets.SUPABASE_URL }}/rest/v1/analysis_log?select=id&limit=1" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}"
