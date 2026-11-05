@@ -1,0 +1,67 @@
+@import '@fontsource-variable/bricolage-grotesque';
+@import '@fontsource-variable/hanken-grotesk';
+
+:root {
+  --ink: #2a1740;
+  --plum: #4b2a6b;
+  --plum-hover: #5e3787;
+  --mist: #f4f0fa;
+  --mist-deep: #e9e1f4;
+  --paper: #ffffff;
+  --line: #d9cee8;
+  --muted: #65567a;
+
+  --coral: #e8473d;
+  --coral-ink: #b3291f;
+  --coral-wash: #fdecea;
+  --sun: #ffc53d;
+  --sun-wash: #fff3d0;
+  --sun-ink: #6b4a00;
+  --mint: #2fa877;
+  --mint-ink: #146a46;
+  --mint-wash: #e2f5eb;
+
+  --font-display: 'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-body: 'Hanken Grotesk Variable', 'Hanken Grotesk', system-ui, sans-serif;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.55;
+  background: var(--mist);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+textarea,
+input {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--plum);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
